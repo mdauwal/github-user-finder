@@ -10,9 +10,12 @@ import Privacy from './Components/Layout/Privacy';
 import Footer from "./Components/Layout/Footer";
 import About from "./Components/Layout/About";
 import Not from "./Components/Layout/Not";
+import { GithubProvider } from "./Components/Context/GithubContext";
+
 
 function App() {
   return (
+    
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />

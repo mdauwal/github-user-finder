@@ -1,9 +1,16 @@
 import React from 'react'
 
+
 const Spinner = () => {
-  return (
-    <div>Spinner</div>
-  )
+  return (<Circles
+    height="80"
+    width="80"
+    color="#4fa94d"
+    ariaLabel="circles-loading"
+    wrapperStyle={{}}
+    wrapperClass=""
+    visible={true}
+    />)
 }
 
 export default Spinner

@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { FaSearch } from 'react-icons/fa';
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+    if (onSearch) {
+      onSearch(e.target.value); // Call the onSearch function if it exists
+    }
+  };
 
   return (
     <nav className="navbar shadow-lg mb-12 bg-neutral text-neutral-content">
@@ -50,6 +59,18 @@ const Navbar = () => {
             <Link to="/privacy" className="block mt-4 lg:mt-0 lg:inline-block btn btn-ghost btn-sm rounded-btn">
               Privacy
             </Link>
+          </div>
+          
+          {/* Search Input */}
+          <div className="ml-4 relative">
+            <FaSearch className="absolute left-3 top-4 text-gray-400" />
+            <input
+              type="text"
+              placeholder="Search for a user..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+              className="input input-bordered pl-10 w-full max-w-xs"
+            />
           </div>
         </div>
       </div>
