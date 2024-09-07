@@ -17,7 +17,8 @@ import { GithubProvider } from "./Components/Context/GithubContext";
 function App() {
   return (
     
-    <Router>
+    <GithubProvider>
+      <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />
         
@@ -36,6 +37,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </GithubProvider>
   );
 }
 
